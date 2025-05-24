@@ -52,6 +52,8 @@ const FileUploader: React.FC<FileUploaderProps> = ({
   };
 
   const validateAndUpload = (file: File) => {
+    console.log('Selected file:', file.type);
+    console.log('Selected acceptedTypes:', acceptedTypes);
     if (!file.type.match(acceptedTypes)) {
       toast.error('Invalid file type. Please upload an MP4 video file.');
       return;
